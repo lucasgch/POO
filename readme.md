@@ -15,4 +15,4 @@
 
 ## Índice de Aulas e Laboratórios
 
-- [2026-07-22-aula-01 - Git e Markdown](./2026-07-22-aula-01)
+- [2026-07-22 - Aula 01 - Git e Markdown](./2026-07-22-aula-01)
