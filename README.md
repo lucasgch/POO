@@ -1,6 +1,6 @@
 # Programação Orientada à Objetos
 
-> Repositório com todos os exercícios e laboratórios desenvolvidos na disciplina Programação Orientada a Objetos do Curso de Análise e Desenvolvimento de Sistemas do IFSC - Instituto Federal de Santa Catarina - Campus São José - SC.
+> Repositório com todos os exercícios e laboratórios desenvolvidos na disciplina **Programação Orientada a Objetos** do Curso de **Análise e Desenvolvimento de Sistemas** do **IFSC - Campus São José - SC**.
 
 - **Disciplina**: POO786202 - Programação Orientada a Objetos
 - **Professor Orientador**: Emerson Ribeiro de Mello - [@emersonmello](https://github.com/emersonmello)
