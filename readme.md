@@ -4,7 +4,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/lucasgch/POO)
 ![GitHub top language](https://img.shields.io/github/languages/top/lucasgch/POO)
 
-> Repositório com todos os exercícios e laboratórios desenvolvidos na disciplina **Programação Orientada a Objetos** do Curso de **Análise e Desenvolvimento de Sistemas** do **IFSC - Campus São José - SC**.
+> Repositório com todos os exercícios e laboratórios desenvolvidos na disciplina **Programação Orientada a Objetos** do Curso de **Análise e Desenvolvimento de Sistemas** do **IFSC - Campus São José _ SC**.
 
 - **Disciplina**: POO786202 - Programação Orientada a Objetos
 - **Professor Orientador**: Emerson Ribeiro de Mello - [@emersonmello](https://github.com/emersonmello)
@@ -19,4 +19,7 @@
 
 ## Índice de Aulas e Laboratórios
 
-- [2026-07-22 - Aula 01 - Git e Markdown](./2026-07-22-aula-01)
+### Aulas
+
+- [2026-07-22 - Aula 01 - Git e Markdown](./aulas/2026-07-22)
+- [2026-07-28 - Aula 02 - Introdução à Java](./aulas/2026-07-28)
