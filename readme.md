@@ -1,5 +1,9 @@
 # Programação Orientada à Objetos
 
+![GitHub License](https://img.shields.io/github/license/lucasgch/POO)
+![GitHub repo size](https://img.shields.io/github/repo-size/lucasgch/POO)
+![GitHub top language](https://img.shields.io/github/languages/top/lucasgch/POO)
+
 > Repositório com todos os exercícios e laboratórios desenvolvidos na disciplina **Programação Orientada a Objetos** do Curso de **Análise e Desenvolvimento de Sistemas** do **IFSC - Campus São José - SC**.
 
 - **Disciplina**: POO786202 - Programação Orientada a Objetos
