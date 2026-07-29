@@ -20,7 +20,7 @@ public class OlaMundo {
         System.out.print("Informe seu sexo(M/F): ");
         char sexo = Character.toLowerCase(sc.next().charAt(0));
 
-        if ( sexo=='m' && idade<45 ) {
+        if ( sexo=='m' && idade<45 && idade>=18 ) {
             System.out.println("Precisa apresentar a carteira de reservista");
         } else {
             System.out.println("Não precisa apresentar a carteira de reservista");
