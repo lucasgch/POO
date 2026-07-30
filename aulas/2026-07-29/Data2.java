@@ -11,7 +11,7 @@
 // maximo - 5 dias por semana
 import java.util.Scanner;
 
-public class Data{
+public class Data2 {
 
     static void main(String[] args) {
 

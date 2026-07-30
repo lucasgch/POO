@@ -11,7 +11,7 @@
 // maximo - 5 dias por semana
 import java.util.Scanner;
 
-public class Data{
+public class Data3 {
 
     static void main(String[] args) {
 
@@ -37,19 +37,19 @@ public class Data{
                     break;
                 }
                 if ( entrada.equals("seg") || entrada.equals("segunda") || entrada.equals("segunda-feira")){
-                    matricula[i][1]="- Seg";
+                    matricula[i][0]="- Seg";
                     diasTotais++;
                 } else if ( entrada.equals("ter") || entrada.equals("terca") || entrada.equals("terça") || entrada.equals("terca-feira") || entrada.equals("terça-feira")){
-                    matricula[i][2]="- Ter";
+                    matricula[i][1]="- Ter";
                     diasTotais++;
                 } else if ( entrada.equals("qua") || entrada.equals("quarta") || entrada.equals("quarta-feira")){
-                    matricula[i][3]="- Qua";
+                    matricula[i][2]="- Qua";
                     diasTotais++;
                 } else if ( entrada.equals("qui") || entrada.equals("quinta") || entrada.equals("quinta-feira")) {
-                    matricula[i][4]="- Qui";
+                    matricula[i][3]="- Qui";
                     diasTotais++;
                 } else if ( entrada.equals("sex") || entrada.equals("sexta") || entrada.equals("sexta-feira")) {
-                    matricula[i][5]="- Sex";
+                    matricula[i][4]="- Sex";
                     diasTotais++;
                 }
             } while (diasTotais<5);
