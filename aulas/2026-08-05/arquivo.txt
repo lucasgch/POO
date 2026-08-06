@@ -1,0 +1,5 @@
+Juca,5.0,4.3
+Lucas,9.5,9.5
+Paula,6.5,8.7
+Tonnho,4.4,9.2
+Cilada,A.66
