@@ -7,3 +7,4 @@ Faça um programa que receba duas notas como argumentos de linha de comando e im
 ## `Leitor.java`
 
 1. Faça um programa que leia e imprima todas as linhas de um arquivo de texto
+2. Faça um programa que leia um arquivo csv com vários alunos e notas e calcule a média entre as 2 notas, exemplo: `juca,6,7`
