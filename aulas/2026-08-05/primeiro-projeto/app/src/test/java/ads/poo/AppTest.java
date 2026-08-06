@@ -11,6 +11,8 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+
+    @Test
     void testMainOutput() {
         // Guarda a saída padrão original do console
         PrintStream originalOut = System.out;
