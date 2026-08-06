@@ -24,3 +24,5 @@
 - [2026-07-22 - Aula 01 - Git e Markdown](./aulas/2026-07-22)
 - [2026-07-28 - Aula 02 - Introdução à Java](./aulas/2026-07-28)
 - [2026-07-29 - Aula 03 - Estruturas de controle, vetores, matrizes](aulas/2026-07-29)
+- [2026-08-05 - Aula 04 - Exercício de arranjos em java](aulas/2026-08-05/)
+- [2026-08-05 - Aula 05 - Entrada de arquivo e gradle](aulas/2026-08-05/)
