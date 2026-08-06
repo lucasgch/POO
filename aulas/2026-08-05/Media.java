@@ -6,8 +6,6 @@ public class Media {
         double nota1 = 0;
         double nota2 = 0;
 
-        boolean entradaValida = false;
-
         if (args.length != 2) {
             System.out.println("Por favor, forneça exatamente dois argumentos.");
             return;
@@ -15,7 +13,6 @@ public class Media {
             try {
                 nota1 = Double.parseDouble(args[0]);
                 nota2 = Double.parseDouble(args[1]);
-                entradaValida = true;
             } catch (NumberFormatException e) {
                 System.out.println("Por favor, forneça apenas números válidos.");
                 return;
