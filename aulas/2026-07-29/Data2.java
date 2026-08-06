@@ -55,7 +55,7 @@ public class Data2 {
                 System.out.println(dias[i]);
             }
         }
-
+        sc.close();
     }
 
 }

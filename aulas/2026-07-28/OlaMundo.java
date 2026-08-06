@@ -11,9 +11,6 @@ public class OlaMundo {
         System.out.print("Entre com seu nome: ");
         String name = sc.nextLine();
 
-        // TODO: Faça um programa para ler a idade e o sexo de uma pessoa
-        // Informe se precisa apresentar atestado de reservista
-
         System.out.print("Informe sua idade: ");
         int idade = sc.nextInt();
 
@@ -21,12 +18,14 @@ public class OlaMundo {
         char sexo = Character.toLowerCase(sc.next().charAt(0));
 
         if ( sexo=='m' && idade<45 && idade>=18 ) {
-            System.out.println("Precisa apresentar a carteira de reservista");
+            System.out.println(name+" precisa apresentar a carteira de reservista");
         } else {
-            System.out.println("Não precisa apresentar a carteira de reservista");
+            System.out.println(name+", não precisa apresentar a carteira de reservista");
         }
 
         System.out.println("-".repeat(50));
+
+        sc.close();
 
     }
 

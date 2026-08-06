@@ -64,6 +64,7 @@ public class Data3 {
                 }
             }
         }
+        sc.close();
 
     }
 

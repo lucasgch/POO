@@ -38,7 +38,7 @@ public class Data{
                 System.out.println("- Sex");
             }
         }
-
+        sc.close();
     }
 
 }

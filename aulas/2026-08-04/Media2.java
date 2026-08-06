@@ -38,7 +38,7 @@ public class Media2 {
         System.out.println("-".repeat(24));
         mediaDaTurma=(mediaDaTurma-notas.length)/6;
         System.out.println("Média da turma: "+String.format("%.2f",mediaDaTurma));
-
+        sc.close();
     }    
     
 }
