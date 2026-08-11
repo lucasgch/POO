@@ -3,12 +3,34 @@
  */
 package ads.poo;
 
+import java.util.Scanner;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Entre com o dia: ");
+        int dia = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Entre com o mes: ");
+        String mes = sc.nextLine().toLowerCase();
+
+        String resultado = null;
+
+        resultado = switch (mes){
+            case "janeiro", "fevereiro" -> "Verão";
+            case "marco", "março" -> dia<21 ? "Verão":"Outono";
+            case "abril", "maio" -> "Outono";
+            case "junho" -> dia>21 ? "Inverno":"Outono";
+            case "julho", "agosto" -> "Inverno";
+            case "setembro" -> dia>22 ? "Primavera":"Verão";
+            case "dezembro" -> dia<22 ? "Primavera":"Verão";
+            default -> "Mês inválido";
+        };
+
+        System.out.println(resultado);
     }
+
+
 }
