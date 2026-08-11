@@ -15,11 +15,6 @@ repositories {
     mavenCentral()
 }
 
-tasks.run.configure {
-    // Configura o terminal padrão para execução pelo ./gradlew run
-    standardInput = System.`in`;
-}
-
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)

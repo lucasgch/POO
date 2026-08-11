@@ -4,12 +4,15 @@
 package ads.poo;
 
 public class App {
-    public String getGreeting() {
-        return "------------- Hello World! -------------";
+    public String getGreeting(String nome) {
+        return "------------- Hello "+nome+"! -------------";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        String nome = IO.readln("Entre com seu nome: ");
+
+        System.out.println(new App().getGreeting(nome));
 
         int erros = 0;
         int acertos = 0;
