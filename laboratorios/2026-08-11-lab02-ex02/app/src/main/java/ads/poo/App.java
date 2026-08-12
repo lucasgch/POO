@@ -3,12 +3,43 @@
  */
 package ads.poo;
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Locale;
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ * Faça um programa que  e peça para o usuário acertar o número.
+ * Se o usuário acertar, o programa deve imprimir “Parabéns, você acertou!ˮ
+ * e indicar quantas tentativas foram necessárias para acertar o número.
+ * Caso contrário, o programa deve avisar se o número informado é maior ou menor que o número sorteado
+ * e pedir para o usuário tentar novamente.
+ * O programa deve continuar pedindo para o usuário tentar acertar o número até que ele acerte.
+ */
+
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        // Gera número aleatório n entre 1 e 100
+        Random random = new Random();
+        int n = random.nextInt(1,101);
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Qual o numero aleatorio entre 1 e 100? ");
+        int palpite = sc.nextInt();
+        int tentativas = 1;
+        while(palpite != n){
+            String maiorOuMenorString = palpite>n?"O numero informado eh maior":"O numero informado eh menor";
+            System.out.println("Voce errou! "+maiorOuMenorString+ ", tente novamente.");
+            palpite = sc.nextInt();
+            tentativas++;
+        }
+        System.out.println("Parabens, voce acertou!");
+        String tentativaString = tentativas == 1 ? " tentativa" : " tentativas";
+        System.out.println(tentativas + tentativaString);
+
     }
 }

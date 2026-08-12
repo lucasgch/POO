@@ -37,6 +37,11 @@ application {
     mainClass = "ads.poo.App"
 }
 
+tasks.run.configure {
+    // Configura o terminal padrão para execução pelo ./gradlew run
+    standardInput = System.`in`;
+}
+
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
