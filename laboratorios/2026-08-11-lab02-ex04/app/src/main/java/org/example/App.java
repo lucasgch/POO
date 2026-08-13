@@ -3,32 +3,48 @@
  */
 package org.example;
 
-import java.util.Random;
+import java.util.*;
 
 public class App {
 
     /**
-     * TODO: Matriz com asteriscos. Desenvolva um aplicativo Java que gere uma matriz quadrada de tamanho 9
-     * e espalhe, de maneira aleatória, 10 asteriscos na matriz. Por fim, imprima na tela a matriz resultante.
-     * Para as casas vazias da matriz, imprima o caractere ponto (.)
-     *
-     * @param args
+     * Matriz com asteriscos. Aplicativo Java que gera uma matriz quadrada de tamanho 9
+     * e espalha, de maneira aleatória, 10 asteriscos na matriz. Por fim, imprime na tela a matriz resultante.
+     * Para as casas vazias da matriz, imprime o caractere ponto (.)
      */
     public static void main(String[] args) {
 
-        // Tamanho definido no enunciado
+        // Tamanhos definidos no enunciado
         final int tamanho = 9;
+        final int quantidadeAsteriscos = 10;
 
         // Cria matriz quadrada
         char[][] matriz = new char[tamanho][tamanho];
 
+        // Inicializa com '.'
+        for (char[] linha : matriz) {
+            Arrays.fill(linha, '.');
+        }
+
+        // Sorteia e insere os 10 asteriscos diretamente na matriz
         Random random = new Random();
-        int exemplo = random.nextInt(0,8);
+        int inseridos = 0;
+
+        while (inseridos < quantidadeAsteriscos) {
+            int x = random.nextInt(tamanho);
+            int y = random.nextInt(tamanho);
+
+            if (matriz[x][y] != '*') {
+                matriz[x][y] = '*';
+                inseridos++;
+            }
+        }
 
         for (int i = 0; i < tamanho; i++) {
             for (int j = 0; j < tamanho; j++) {
-                System.out.println(i + ":" + j);
+                System.out.print(matriz[i][j] + " ");
             }
+            System.out.println();
         }
 
     }
