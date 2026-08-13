@@ -3,6 +3,8 @@
  */
 package org.example;
 
+import java.util.Random;
+
 public class App {
 
     /**
@@ -13,6 +15,21 @@ public class App {
      * @param args
      */
     public static void main(String[] args) {
+
+        // Tamanho definido no enunciado
+        final int tamanho = 9;
+
+        // Cria matriz quadrada
+        char[][] matriz = new char[tamanho][tamanho];
+
+        Random random = new Random();
+        int exemplo = random.nextInt(0,8);
+
+        for (int i = 0; i < tamanho; i++) {
+            for (int j = 0; j < tamanho; j++) {
+                System.out.println(i + ":" + j);
+            }
+        }
 
     }
 }
