@@ -40,10 +40,22 @@ public class App {
                 }
                 System.out.println();
             }
-        } else {
+        } else { // losango
             int espacos = tamanho/2;
-            // TODO Implementar impressao do losango
-            System.out.println("TODO");
+            int asteriscos = tamanho%2;
+            for (int i=0; i<tamanho; i++){
+                System.out.print(" ".repeat(espacos));
+                System.out.print("*".repeat(asteriscos));
+                System.out.println();
+                if (i < tamanho/2){
+                    espacos = espacos -1;
+                    asteriscos = asteriscos + 2;
+                } else {
+                    espacos = espacos +1;
+                    asteriscos = asteriscos - 2;
+                }
+            }
+
         }
     }
     public static void asciiArt(int tamanho, int tamanho2Retangulo) {
