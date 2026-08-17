@@ -3,22 +3,88 @@
  */
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class App {
 
     /**
-     * TODO: Leitura de arquivo. Desenvolva um aplicativo Java que leia uma matriz, gerada pelo exercício anterior,
-     * a partir de um arquivo texto e por meio do redirecionamento de entrada (uso do operador <). Para
-     * cada casa da matriz em que não houver um asterisco, você deverá registrar o total de asteriscos
-     * presentes nas casas adjacentes. Se não houverem asteriscos, então pode manter o caractere ponto
-     * (.) na referida casa. Por fim, imprima a matriz resultante na tela.
-     * IFSC – Campus São José Página 1
-     * 💡 Dica
-     * Apesar de ser solicitado imprimir pontos e asteriscos, você pode usar números inteiros para
-     * representar a informação na memória. Por exemplo, o número 9 pode representar um asterisco
-     * e o número 0 pode representar uma casa vazia.
-     * @param args
+     * Recebe uma matriz de caracteres . ou * como entrada a partir do redirecionamento de arquivo
+     * Para cada casa da matriz em que não houver um asterisco, registra o total de asteriscos
+     * presentes nas casas adjacentes. Se não há asteriscos, mantem o caractere ponto
+     * (.) na referida casa. Por fim, imprime a matriz resultante na tela.
+     * Para testar redirecione a entrada com o ./gradlew run < input.txt
      */
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+        List<String> linhasLista = new ArrayList<>();
+
+        // Lê todas as linhas da entrada até o fim do arquivo
+        while (scanner.hasNextLine()) {
+            String linha = scanner.nextLine().trim();
+            if (!linha.isEmpty()) {
+                linhasLista.add(linha);
+            }
+        }
+        scanner.close();
+
+        if (linhasLista.isEmpty()) return;
+
+        int linhas = linhasLista.size();
+        int colunas = linhasLista.get(0).length();
+        char[][] matriz = new char[linhas][colunas];
+
+        // Preenche a matriz char[][]
+        for (int i = 0; i < linhas; i++) {
+            matriz[i] = linhasLista.get(i).toCharArray();
+        }
+
+        scanner.close();
+
+        // Imprime a matriz resultante
+        int asteriscosAdjacentes = 0;
+        for (int i = 0; i < linhas; i++) {
+            for (int j = 0; j < colunas; j++) {
+                if (matriz[i][j]=='.'){
+                    if (j>0){
+                        if (matriz[i][j-1]=='*') {
+                            asteriscosAdjacentes++;
+                        }
+                    }
+                    if (j<colunas-1){
+                        if (matriz[i][j+1]=='*') {
+                            asteriscosAdjacentes++;
+                        }
+                    }
+                    if (i<linhas-1){
+                        if (matriz[i+1][j]=='*') {
+                            asteriscosAdjacentes++;
+                        }
+                    }
+                    if (i>0) {
+                        if (matriz[i-1][j]=='*') {
+                            asteriscosAdjacentes++;
+                        }
+                    }
+                    if (asteriscosAdjacentes > 0){
+                        matriz[i][j] = Character.forDigit(asteriscosAdjacentes, 10);
+                    }
+                    asteriscosAdjacentes = 0;
+                };
+            }
+
+        }
+
+        // Imprime a matriz resultante
+        for (int i = 0; i < linhas; i++) {
+            for (int j = 0; j < colunas; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+
     }
+
 }
