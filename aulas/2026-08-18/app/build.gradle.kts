@@ -15,11 +15,6 @@ repositories {
     mavenCentral()
 }
 
-tasks.run.configure {
-    // Configura o terminal padrão para execução pelo ./gradlew run
-    standardInput = System.`in`;
-}
-
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
@@ -39,12 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "ads.poo.App"
-}
-
-tasks.run.configure {
-    // Configura o terminal padrão para execução pelo ./gradlew run
-    standardInput = System.`in`;
+    mainClass = "org.example.App"
 }
 
 tasks.named<Test>("test") {

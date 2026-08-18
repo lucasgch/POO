@@ -10,14 +10,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * Faça um programa que  e peça para o usuário acertar o número.
- * Se o usuário acertar, o programa deve imprimir “Parabéns, você acertou!ˮ
- * e indicar quantas tentativas foram necessárias para acertar o número.
- * Caso contrário, o programa deve avisar se o número informado é maior ou menor que o número sorteado
- * e pedir para o usuário tentar novamente.
- * O programa deve continuar pedindo para o usuário tentar acertar o número até que ele acerte.
+ * Programa que pede para o usuário acertar o número.
+ * Se o usuário acertar, imprimir “Parabéns, você acertou!ˮ
+ * e indica quantas tentativas foram necessárias para acertar o número.
+ * Caso contrário, avisa se o número informado é maior ou menor que o número sorteado
+ * Ao final, pede para o usuário tentar novamente.
+ * O programa continua pedindo para o usuário tentar acertar o número até que ele acerte.
  */
-
 
 public class App {
 
