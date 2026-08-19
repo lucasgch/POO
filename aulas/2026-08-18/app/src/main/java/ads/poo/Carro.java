@@ -20,7 +20,11 @@ public class Carro {
     }
 
     public void freiar(double decremento){
-        velocidadeAtual-=decremento;
+        if ( velocidadeAtual - decremento >=0 ){
+            velocidadeAtual-=decremento;
+        } else {
+            velocidadeAtual=0;
+        }
     }
 
     public double getVelocidadeAtual() {
