@@ -11,6 +11,10 @@ public class Pessoa{
     private String name;
     private String email;
 
+    public Pessoa(){
+        id=gerarId();
+    };
+
     public Pessoa(String nome, String email){
         this.name = nome;
         this.email = email;
@@ -32,6 +36,14 @@ public class Pessoa{
 
     public String getEmail() {
         return email;
+    }
+
+    public void setName(String nome){
+        this.name=nome;
+    }
+
+    public void setEmail(String email){
+        this.email=email;
     }
 
     @Override

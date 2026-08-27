@@ -3,14 +3,108 @@
  */
 package ads.poo;
 
-public class App {
+// 1. Cadastrar pessoas
+// 2. Listar todas as pessoas
+// 3. Imprimir dados de uma pessoa
+// 4. Sair
 
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class App {
+    static Pessoa[] bancoDeDados = new Pessoa[100];
 
     public static void main(String[] args) {
-        Pessoa a = new Pessoa("Joao", "Joao@aluno.ifsc.edu.br");
-        Pessoa b = new Pessoa("Paulo", "Paulo@aluno.ifsc.edu.br");
 
-        System.out.println(a);
-        System.out.println(b);
+        App app = new App();
+        System.out.printf("%4s --- Sistema de cadastro de pessoas ---%n%n"," ");
+        int opcao;
+        Scanner sc = new Scanner(System.in);
+
+        do {
+            app.imprimeMenu();
+            System.out.print("Informe a opção desejada: ");
+            opcao=sc.nextInt();
+            switch (opcao){
+                case 1 -> app.cadastrarPessoa();
+                case 2 -> app.imprimirPessoas();
+                case 3 -> app.imprimirPessoa();
+                case 4 -> {
+                    System.out.println("Saindo do sistema!");
+                    return;
+                }
+                default -> {
+                    System.out.printf("Opção inválida%nTente Novamente");
+                }
+            }
+        } while(opcao!=4);
+
+
+    }
+
+    public void imprimeMenu(){
+        System.out.printf("%3s MENU%n"," ");
+
+        String menu = """
+                1 - Cadastrar
+                2 - Listar todas as pessoas
+                3 - Imprimir dados de uma pessoa
+                4 - Sair
+            """;
+        System.out.printf("%s%n",menu);
+    }
+
+    public void cadastrarPessoa(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Iniciando cadastro de pessoa ---");
+        for (int i=0; i< bancoDeDados.length; i++){
+            if (bancoDeDados[i]==null){
+                bancoDeDados[i] = new Pessoa();
+                System.out.printf("Cadastrando pessoa com id: %d%n",i);
+                System.out.print("Informe o nome da pessoa: ");
+                String nome = sc.nextLine();
+                bancoDeDados[i].setName(nome);
+                System.out.print("Informe o email da pessoa: ");
+                String email = sc.nextLine();
+                bancoDeDados[i].setEmail(email);
+                System.out.printf("%n--- Pessoa cadastrada com sucesso! ---%n");
+                break;
+            } else if(i==100){
+                System.out.println("Banco de dados cheio");
+            }
+        }
+    };
+
+    public void imprimirPessoas(){
+        System.out.println("Imprimindo pessoas");
+        for (int i=0; i< bancoDeDados.length; i++){
+            if (bancoDeDados[i]==null){
+                System.out.println("Todas as pessoas foram impressas!");
+                break;
+            }
+            System.out.println(bancoDeDados[i]);
+        }
+    }
+
+    public void imprimirPessoa(){
+        System.out.println("Informe o id da pessoa que deseja imprimir: ");
+        Scanner scanner = new Scanner(System.in);
+        int id = scanner.nextInt();
+        for (int i=0; i< bancoDeDados.length; i++){
+
+            if(bancoDeDados[0]==null){
+                System.out.println("Banco de dados vazio!");
+            } else if (bancoDeDados[i]==null) {
+                System.out.println("Pessoa não encontrada!");
+                break;
+            }
+            else if (bancoDeDados[i].getId()==id){
+                System.out.println(bancoDeDados[i]);
+                break;
+            } else if (i==100){
+                System.out.println("Pessoa não encontrada!");
+            }
+        }
+
     }
 }

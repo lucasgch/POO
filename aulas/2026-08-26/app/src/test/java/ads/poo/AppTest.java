@@ -8,12 +8,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void primeiraPessoaDeveTerId1() {
-          Pessoa pessoa = new Pessoa("1","teste@teste1.com");
-          assertEquals(pessoa.getId(),1);
+        Pessoa pessoa1 = new Pessoa("1", "teste@teste1.com");
+        assertEquals(1, pessoa1.getId());
     }
 
-    @Test void segundaPessoaDeveTerId2() {
-        Pessoa pessoa2 = new Pessoa("2","teste@teste2.com");
-        assertEquals(pessoa2.getId(),2);
+    @Test void deveIncrementarIdAosCriarPessoas() {
+        Pessoa p1 = new Pessoa("1", "teste1@teste.com");
+        Pessoa p2 = new Pessoa("2", "teste2@teste.com");
+
+        assertEquals(p1.getId() + 1, p2.getId());
+    }
+
+    @Test void devePermitirSetarNome() {
+        Pessoa pessoa3 = new Pessoa();
+        pessoa3.setName("Joao");
+        assertEquals("Joao", pessoa3.getName());
+    }
+
+    @Test void devePermitirSetarEmail() {
+        Pessoa pessoa3 = new Pessoa();
+        pessoa3.setEmail("Joao@gmail.com");
+        assertEquals("Joao@gmail.com", pessoa3.getEmail()); // Corrigido de getName() para getEmail()
     }
 }
