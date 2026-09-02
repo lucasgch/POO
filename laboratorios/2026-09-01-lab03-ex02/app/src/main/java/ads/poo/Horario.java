@@ -78,6 +78,10 @@ public class Horario {
         return false;
     }
 
+    public int getHorarioEmSegundos(){
+        return hora * 3600 + minuto * 60 + segundo;
+    }
+
     public String getHoraPorExtenso() {
         if (this.hora == 0) {
             return "Zero horas";

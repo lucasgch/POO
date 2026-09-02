@@ -15,6 +15,7 @@ public class App {
         for (int i = 0; i < casosDeTeste.length; i++) {
             System.out.println("Caso de teste "+(i+1));
             System.out.println("Hora: "+casosDeTeste[i]);
+            System.out.println("Horario em segundos: "+casosDeTeste[i].getHorarioEmSegundos());
             System.out.println("Hora por extenso: "+casosDeTeste[i].getHorarioPorExtenso());
         }
 
