@@ -209,6 +209,10 @@ public class Horario {
         }
     }
 
+    public int getDiferencaEmSegundos(Horario horario){
+        return Math.abs(horario.getHorarioEmSegundos() - this.getHorarioEmSegundos());
+    }
+
     public String getMinutoPorExtenso() {
         if (this.minuto == 0) return "zero minutos";
         String extensao = getNumeroPorExtenso(this.minuto);
