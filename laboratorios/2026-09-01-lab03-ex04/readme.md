@@ -1,6 +1,9 @@
 # 4 - Classe para representar uma Data
 
-Crie uma classe chamada Data para representar uma data (dia, mês e ano). A classe deverá ter os seguintes métodos:
+Crie uma classe chamada Data para representar uma data (dia, mês e ano).
+
+A classe deverá ter os seguintes métodos:
+
 - Método construtor padrão que inicialize com a data 01/01/1970;
 - Métodos construtores sobrecarregados que permitam inicializar os atributos com valores fornecidos como argumentos para: i) dia; ii) dia e mês; e iii) dia, mês e ano. Caso algum dos valores não seja válido, o método construtor deve inicializar todos os atributos com valores padrão 01/01/1970;
 - A classe deve garantir que a data fornecida seja válida. Por exemplo, a data 31/02/2024 não é válida, pois em 2024 o mês de fevereiro tem no máximo 29 dias.

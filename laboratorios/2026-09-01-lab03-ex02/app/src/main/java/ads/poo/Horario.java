@@ -13,8 +13,7 @@ public class Horario {
     }
 
     public Horario(int hora){
-        this.hora = isValidHour(hora)?hora:0;
-
+        this.hora = isValidHour(hora)?hora:0
         this.minuto = 0;
         this.segundo = 0;
     }
