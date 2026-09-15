@@ -19,7 +19,7 @@ public class Caneta {
     }
 
     public void setNivelTinta(double quantidadeDeTinta){
-        this.nivelTinta = nivelTinta;
+        this.nivelTinta = quantidadeDeTinta;
     }
 
     public double getNivelTinta(){
@@ -40,9 +40,9 @@ public class Caneta {
         if (distanciaPercorrida>1) {
             consumo = distanciaPercorrida * (CONSUMO / 100);
         }
-        if (nivelTinta >consumo){
-            this.nivelTinta -=consumo;
-            return nivelTinta;
+        if (nivelTinta > consumo){
+            this.nivelTinta -= consumo;
+            return consumo;
         }
         return -1;
     }
