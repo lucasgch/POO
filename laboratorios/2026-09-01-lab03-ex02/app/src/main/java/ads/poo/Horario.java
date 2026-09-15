@@ -19,15 +19,13 @@ public class Horario {
     }
 
     public Horario(int hora, int minuto){
-
-        this.hora = isValidHour(hora)?hora:0;
+        this.Horario(int hora);
         this.minuto = isValidMinuto(minuto)?minuto:0;
         this.segundo = 0;
     }
 
     public Horario(int hora, int minuto, int segundo){
-        this.hora = isValidHour(hora)?hora:0;
-        this.minuto = isValidMinuto(minuto)?minuto:0;
+        this.Horario(int hora, int minuto);
         this.segundo = isValidSegundo(segundo)?segundo:0;
     }
 
