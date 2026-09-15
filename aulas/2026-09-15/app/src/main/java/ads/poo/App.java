@@ -3,9 +3,73 @@
  */
 package ads.poo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
 
     public static void main(String[] args) {
 
+        ArrayList<String> listaDeStrings = new ArrayList<>();
+
+        listaDeStrings.add("Dois");
+        listaDeStrings.add("Tres");
+        listaDeStrings.add("Quatro");
+        listaDeStrings.addFirst("Um");
+        listaDeStrings.add("Um");
+
+        System.out.printf("%n"+"-".repeat(40)+"%n");
+        System.out.println("Imprimindo toda a lista com toString");
+        System.out.printf("-".repeat(40)+"%n");
+        System.out.println();
+        System.out.println(listaDeStrings.toString());
+
+        System.out.printf("%n"+"-".repeat(10)+"%n%n");
+
+        System.out.println("Percorrendo a lista com for each");
+        System.out.printf("-".repeat(40)+"%n");
+        for (String texto: listaDeStrings){
+            System.out.println(texto);
+        }
+
+        System.out.printf("-".repeat(55)+"%n");
+        System.out.println("Percorrendo a lista com for each e lamba expression");
+        System.out.printf("-".repeat(55)+"%n");
+        listaDeStrings.forEach(e -> IO.println(e));
+        System.out.printf("-".repeat(55)+"%n");
+
+        System.out.println("Percorrendo a lista com for each e method reference");
+        System.out.printf("-".repeat(55)+"%n");
+        listaDeStrings.forEach(IO::println);
+        System.out.printf("-".repeat(55)+"%n%n");
+
+        System.out.println("Removendo elemento da lista com removeIf");
+        System.out.printf("-".repeat(55)+"%n%n");
+        listaDeStrings.removeIf(e->e.equals("Um"));
+
+
+
+        System.out.println(listaDeStrings);
+
+        System.out.println("Crinado lista de pessoas e adicionando 3 pessoas");
+
+        List<Pessoa> listaDePessoas = new ArrayList<>();
+
+        Pessoa joao = new Pessoa("Julio", "cadeojulio@gmail.com");
+        Pessoa maria = new Pessoa("Bruno", "bruno@ifsc.com");
+        Pessoa mauricio = new Pessoa("Mauricio", "mauricio@ifsc.com");
+        Pessoa felipe = new Pessoa ("Felipe", "zin@email.net");
+        Pessoa julio2 = new Pessoa ("Julio", "zulio@email.net");
+
+        listaDePessoas.add(joao);
+        listaDePessoas.add(maria);
+        listaDePessoas.add(mauricio);
+        listaDePessoas.add(felipe);
+        listaDePessoas.remove(joao); // Remove com auxílio do equals
+
+        // Remove todas as pessoas com nome = julio
+        listaDePessoas.removeIf(e->e.getNome().equals("Julio"));
+
+        listaDePessoas.forEach(IO::println);
     }
 }
