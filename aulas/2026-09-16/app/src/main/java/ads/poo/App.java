@@ -4,6 +4,7 @@ import ads.poo.entity.Livro;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class App {
@@ -13,10 +14,18 @@ public class App {
     static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        //Livro meuPrimeiroLivro = new Livro("978-8576573890", "Piquinique na estrada", "Arkádi Strugátski e Boris Strugátski", 2017);
+        Livro meuPrimeiroLivro = new Livro("978-8576573890", "Piquinique na estrada", "Arkádi Strugátski e Boris Strugátski", 2017);
+        Livro meuSegundoLivro = new Livro("978-8535902778", "1984", "George Orwell", 2009);
+        Livro meuTerceiroLivro = new Livro("978-8535914849", "Admirável Mundo Novo", "Aldous Huxley", 2014);
+        Livro meuQuartoLivro = new Livro("978-8525044884", "Fahrenheit 451", "Ray Bradbury", 2012);
+        Livro meuQuintoLivro = new Livro("978-8576572350", "Fundação", "Isaac Asimov", 2015);
+        livros.put(meuPrimeiroLivro.getIsbn(), meuPrimeiroLivro);
+        livros.put(meuSegundoLivro.getIsbn(), meuSegundoLivro);
+        livros.put(meuTerceiroLivro.getIsbn(), meuTerceiroLivro);
+        livros.put(meuQuartoLivro.getIsbn(), meuQuartoLivro);
+        livros.put(meuQuintoLivro.getIsbn(), meuQuintoLivro);
 
-        cadastrar(sc);
-        cadastrar(sc);
+        System.out.println(livros.toString());
 
         listarTodosIsbnTitulos();
 
@@ -65,17 +74,18 @@ public class App {
         }
     }
 
-    public static Livro consultarPorISBN(Scanner sc){
+    public static Optional<Livro> consultarPorISBN(Scanner sc){
+
         System.out.print("Informe o ISBN para consultar: ");
         String isbn = sc.nextLine();
 
         if (livros.containsKey(isbn)){
             Livro livro = livros.get(isbn);
             System.out.println(livro);
-            return livro;
+            return Optional.ofNullable(livro);
         } else {
             System.out.println("ISBN "+ isbn + " não cadastrado!");
-            return null;
+            return Optional.empty();
         }
     }
 
@@ -88,9 +98,9 @@ public class App {
                 hasAuthor = true;
                 System.out.println("ISBN: " + livro.getIsbn() +" - Título: " + livro.getTitle());
             }
-            if (!hasAuthor){
-                System.out.println("Autor " + autor+ " não cadastrado!");
-            }
+        }
+        if (!hasAuthor){
+            System.out.println("Autor " + autor+ " não cadastrado!");
         }
     }
 
@@ -104,9 +114,9 @@ public class App {
                 hasReleaseYear = true;
                 System.out.println("ISBN: " + livro.getIsbn() +" - Título: " + livro.getTitle());
             }
-            if (!hasReleaseYear){
-                System.out.println("Nenhum livro lançado no ano " + releaseYear);
-            }
+        }
+        if (!hasReleaseYear){
+            System.out.println("Nenhum livro lançado no ano " + releaseYear);
         }
     }
 
@@ -115,9 +125,28 @@ public class App {
         String isbn = sc.nextLine();
         if (livros.containsKey(isbn)){
             Livro livro = livros.get(isbn);
-            System.out.println(livro);
+            System.out.println("Livro encontrado: " + livro);
+            System.out.print("Informe o novo título (ou pressione Enter para manter o atual): ");
+            String novoTitulo = sc.nextLine();
+            if (!novoTitulo.isEmpty()) {
+                livro.setTitle(novoTitulo);
+            }
+            System.out.print("Informe o novo autor (ou pressione Enter para manter o atual): ");
+            String novoAutor = sc.nextLine();
+            if (!novoAutor.isEmpty()) {
+                livro.setAuthor(novoAutor);
+            }
+            System.out.print("Informe o novo ano de lançamento (ou pressione Enter para manter o atual): ");
+            String novoAnoStr = sc.nextLine();
+            if (!novoAnoStr.isEmpty()) {
+                int novoAno = Integer.parseInt(novoAnoStr);
+                livro.setReleaseYear(novoAno);
+            }
+            System.out.println("Livro atualizado: " + livro);
+            livros.put(isbn, livro);
+        } else {
+            System.out.println("ISBN "+ isbn + " não cadastrado!");
         }
-
     }
 
 }
