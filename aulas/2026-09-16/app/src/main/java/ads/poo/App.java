@@ -15,31 +15,12 @@ public class App {
     static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Livro meuPrimeiroLivro = new Livro("978-8576573890", "Piquinique na estrada", "Arkádi Strugátski e Boris Strugátski", 2017);
-        Livro meuSegundoLivro = new Livro("978-8535902778", "1984", "George Orwell", 2009);
-        Livro meuTerceiroLivro = new Livro("978-8535914849", "Admirável Mundo Novo", "Aldous Huxley", 2014);
-        Livro meuQuartoLivro = new Livro("978-8525044884", "Fahrenheit 451", "Ray Bradbury", 2012);
-        Livro meuQuintoLivro = new Livro("978-8576572350", "Fundação", "Isaac Asimov", 2015);
-        livros.put(meuPrimeiroLivro.getIsbn(), meuPrimeiroLivro);
-        livros.put(meuSegundoLivro.getIsbn(), meuSegundoLivro);
-        livros.put(meuTerceiroLivro.getIsbn(), meuTerceiroLivro);
-        livros.put(meuQuartoLivro.getIsbn(), meuQuartoLivro);
-        livros.put(meuQuintoLivro.getIsbn(), meuQuintoLivro);
 
-        System.out.println(livros.toString());
-        //listarTodosIsbnTitulos();
-
-        System.out.println("Consultando por ISBN");
-        //consultarPorISBN(sc);
-
-        System.out.println("Consultando por Autor");
-        //consultarPorAutor(sc);
-
-        System.out.println("Consultando por Ano de Publicação");
-        //consultarPorAnoPublicacao(sc);
-
-        System.out.println("Atualizando livro");
-        atualizarLivro(sc);
+        boolean loop = true;
+        while (loop) {
+            imprimirMenu();
+            loop = leExecutaMenu(sc);
+        }
 
         sc.close();
     }
@@ -161,5 +142,78 @@ public class App {
         } else {
             System.out.println("ISBN " + isbn + " não cadastrado!");
         }
+    }
+
+    public static void imprimirMenu(){
+        int largura = 50;
+        String texto = "Sistema de gerenciamento de livros!";
+        imprimirDiv(largura);
+        System.out.printf("%" + ((largura - texto.length()) / 2 + texto.length()) + "s%n", texto);
+        imprimirDiv(largura);
+        System.out.println("1. Cadastrar livro");
+        System.out.println("2. Listar todos os livros (ISBN e Título)");
+        System.out.println("3. Consultar livro por ISBN");
+        System.out.println("4. Consultar livro por autor");
+        System.out.println("5. Consultar livro por ano de publicação");
+        System.out.println("6. Atualizar livro");
+        System.out.println("7. Remover livro");
+        System.out.println("8. Popular base de dados com livros de exemplo");
+        System.out.println("9. Sair");
+        imprimirDiv(largura);
+    }
+
+    public static void popularBaseDeDados() {
+        Livro livro1 = new Livro("978-8576573890", "Piquinique na estrada", "Arkádi Strugátski e Boris Strugátski", 2017);
+        Livro livro2 = new Livro("978-8535902778", "1984", "George Orwell", 2009);
+        Livro livro3 = new Livro("978-8535914849", "Admirável Mundo Novo", "Aldous Huxley", 2014);
+        Livro livro4 = new Livro("978-8525044884", "Fahrenheit 451", "Ray Bradbury", 2012);
+        Livro livro5 = new Livro("978-8576572350", "Fundação", "Isaac Asimov", 2015);
+
+        livros.put(livro1.getIsbn(), livro1);
+        livros.put(livro2.getIsbn(), livro2);
+        livros.put(livro3.getIsbn(), livro3);
+        livros.put(livro4.getIsbn(), livro4);
+        livros.put(livro5.getIsbn(), livro5);
+
+        System.out.println("Base de dados populada com 5 livros de exemplo.");
+    }
+
+    public static boolean leExecutaMenu(Scanner sc){
+        String opcao = sc.nextLine();
+        switch (opcao) {
+            case "1":
+                cadastrar(sc);
+                break;
+            case "2":
+                listarTodosIsbnTitulos();
+                break;
+            case "3":
+                consultarPorISBN(sc);
+                break;
+            case "4":
+                consultarPorAutor(sc);
+                break;
+            case "5":
+                consultarPorAnoPublicacao(sc);
+                break;
+            case "6":
+                atualizarLivro(sc);
+                break;
+            case "7":
+                removerLivro(sc);
+                break;
+            case "8":
+                popularBaseDeDados();
+                break;
+            case "9":
+                System.out.println("Saindo do sistema...");
+                return false;
+            default:
+                System.out.println("Opção inválida. Tente novamente.");
+        }
+        return true;
+    }
+    static void imprimirDiv(int largura){
+        System.out.println("-".repeat(largura));
     }
 }
