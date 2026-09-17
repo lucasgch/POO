@@ -2,6 +2,7 @@ package ads.poo;
 
 import ads.poo.entity.Livro;
 
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -26,17 +27,19 @@ public class App {
         livros.put(meuQuintoLivro.getIsbn(), meuQuintoLivro);
 
         System.out.println(livros.toString());
-
-        listarTodosIsbnTitulos();
+        //listarTodosIsbnTitulos();
 
         System.out.println("Consultando por ISBN");
-        consultarPorISBN(sc);
+        //consultarPorISBN(sc);
 
         System.out.println("Consultando por Autor");
-        consultarPorAutor(sc);
+        //consultarPorAutor(sc);
 
         System.out.println("Consultando por Ano de Publicação");
-        consultarPorAnoPublicacao(sc);
+        //consultarPorAnoPublicacao(sc);
+
+        System.out.println("Atualizando livro");
+        atualizarLivro(sc);
 
         sc.close();
     }
@@ -149,4 +152,14 @@ public class App {
         }
     }
 
+    public static void removerLivro(Scanner sc) {
+        System.out.print("Informe o ISBN do livro que deseja remover: ");
+        String isbn = sc.nextLine();
+        if (livros.containsKey(isbn)) {
+            livros.remove(isbn);
+            System.out.println("Livro com ISBN " + isbn + " removido com sucesso.");
+        } else {
+            System.out.println("ISBN " + isbn + " não cadastrado!");
+        }
+    }
 }
