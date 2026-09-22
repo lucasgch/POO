@@ -6,6 +6,7 @@ package ads.poo;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.oned.EAN13Writer;
+import net.datafaker.Faker;
 
 public class App {
 
@@ -14,7 +15,8 @@ public class App {
         int largura = 105;
         int altura = 5;
 
-        String isbn = "9788576053576";
+        Faker faker = new Faker();
+        String isbn = faker.code().isbn13();
 
         EAN13Writer writer = new EAN13Writer();
         // Gera a matriz de bits para o formato EAN_13

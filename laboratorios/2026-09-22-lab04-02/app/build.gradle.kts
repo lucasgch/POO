@@ -26,6 +26,9 @@ dependencies {
 
     // Zxing Core permite gerar códigos de barra 1D e 2D QRCode
     implementation("com.google.zxing:core:3.5.4")
+
+    // Data faker
+    implementation("net.datafaker:datafaker:2.7.0")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
