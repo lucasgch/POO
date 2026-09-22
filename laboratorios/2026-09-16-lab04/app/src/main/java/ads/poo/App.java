@@ -2,7 +2,6 @@ package ads.poo;
 
 import ads.poo.entity.Livro;
 
-import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -136,8 +135,7 @@ public class App {
     public static void removerLivro(Scanner sc) {
         System.out.print("Informe o ISBN do livro que deseja remover: ");
         String isbn = sc.nextLine();
-        if (livros.containsKey(isbn)) {
-            livros.remove(isbn);
+        if (livros.remove(isbn)!=null) {
             System.out.println("Livro com ISBN " + isbn + " removido com sucesso.");
         } else {
             System.out.println("ISBN " + isbn + " não cadastrado!");
