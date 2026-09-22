@@ -22,6 +22,7 @@ public class App {
 
         // Renderiza o código de barras usando blocos cheios █ e espaços em branco
         // https://www.unicodepedia.com/unicode/block-elements/2588/full-block/
+
         for (int i = 0; i < altura; i++) {
             for (int x = 0; x < bitMatrix.getWidth(); x++) {
                 if (bitMatrix.get(x, 0)) {

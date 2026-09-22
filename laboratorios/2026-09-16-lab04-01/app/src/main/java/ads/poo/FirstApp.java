@@ -3,63 +3,63 @@
  */
 package ads.poo;
 
-import java.util.HashMap;
-import java.util.Map;
+//import java.util.HashMap;
+//import java.util.Map;
 
 public class FirstApp {
 
-    public static void main(String[] args) {
-
-
-        Map<String, String> mapa = new HashMap<>();
-
-        mapa.put("123", "Juca");
-        mapa.put("125", "Juca");
-        mapa.put("129", "Juca");
-        mapa.put("130", "Juca");
-        mapa.put("456", "Ana");
-        mapa.put("789", "Pedro");
-        mapa.put("789", "Joao");
-
-        printDiv();
-        System.out.println("Imprimindo todo o mapa com toString()");
-        System.out.println(mapa.toString());
-        printDiv();
-        System.out.println();
-
-        String key = "456";
-        String name = mapa.get(key);
-
-        printDiv();
-        System.out.println("Buscando pela chave '"+key+"'");
-        System.out.println("Chave '"+key+"' corresponde ao nome: "+name);
-        printDiv();
-        System.out.println();
-        printDiv();
-        System.out.println("Imprimindo todo o mapa com for each");
-        mapa.forEach((chave, valor)-> IO.println("chave: "+ chave + ", valor: "+valor));
-        printDiv();
-
-        System.out.println("Imprimindo com for e get.key get.value");
-        for (var elemento: mapa.entrySet()){
-            IO.print("Chave: "+elemento.getKey());
-            IO.println(" - Valor: "+elemento.getValue());
-        }
-        printDiv();
-
-        System.out.println("Removendo elemento '456' de um map com .remove e a chave a remover");
-        mapa.remove("456");
-        System.out.println("Mapa resultante: "+mapa.toString());
-        printDiv();
-        System.out.println("Removendo todos os elementos com value= juca ");
-        mapa.values().removeIf(e->e.equals("Juca"));
-        System.out.println("Mapa resultante: "+mapa.toString());
-        printDiv();
-    }
-
-
-
-    public static void printDiv(){
-        System.out.println("-".repeat(50));
-    }
+//    public static void main(String[] args) {
+//
+//
+//        Map<String, String> mapa = new HashMap<>();
+//
+//        mapa.put("123", "Juca");
+//        mapa.put("125", "Juca");
+//        mapa.put("129", "Juca");
+//        mapa.put("130", "Juca");
+//        mapa.put("456", "Ana");
+//        mapa.put("789", "Pedro");
+//        mapa.put("789", "Joao");
+//
+//        printDiv();
+//        System.out.println("Imprimindo todo o mapa com toString()");
+//        System.out.println(mapa.toString());
+//        printDiv();
+//        System.out.println();
+//
+//        String key = "456";
+//        String name = mapa.get(key);
+//
+//        printDiv();
+//        System.out.println("Buscando pela chave '"+key+"'");
+//        System.out.println("Chave '"+key+"' corresponde ao nome: "+name);
+//        printDiv();
+//        System.out.println();
+//        printDiv();
+//        System.out.println("Imprimindo todo o mapa com for each");
+//        mapa.forEach((chave, valor)-> IO.println("chave: "+ chave + ", valor: "+valor));
+//        printDiv();
+//
+//        System.out.println("Imprimindo com for e get.key get.value");
+//        for (var elemento: mapa.entrySet()){
+//            IO.print("Chave: "+elemento.getKey());
+//            IO.println(" - Valor: "+elemento.getValue());
+//        }
+//        printDiv();
+//
+//        System.out.println("Removendo elemento '456' de um map com .remove e a chave a remover");
+//        mapa.remove("456");
+//        System.out.println("Mapa resultante: "+mapa.toString());
+//        printDiv();
+//        System.out.println("Removendo todos os elementos com value= juca ");
+//        mapa.values().removeIf(e->e.equals("Juca"));
+//        System.out.println("Mapa resultante: "+mapa.toString());
+//        printDiv();
+//    }
+//
+//
+//
+//    public static void printDiv(){
+//        System.out.println("-".repeat(50));
+//    }
 }

@@ -25,19 +25,24 @@ public class App {
     }
 
     public static void cadastrar(Scanner sc){
-        String isbn, title, author;
+        String isbn = "";
+        String title, author;
         int releaseYear;
         System.out.println("------ Método de cadastro de livros ------");
 
         boolean firstTry = true;
         do {
             if (!firstTry) {
+                if (isbn.isEmpty()) {
+                    System.out.println("ISBN não pode ser vazio.");
+                } else {
                 System.out.println("ISBN já cadastrado.");
+                }
             }
             System.out.print("Informe o ISBN: ");
             isbn = sc.nextLine();
             firstTry = false;
-        } while (livros.containsKey(isbn));
+        } while (livros.containsKey(isbn) || isbn.isEmpty());
 
         System.out.print("Informe o Título: ");
         title = sc.nextLine();
