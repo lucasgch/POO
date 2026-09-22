@@ -46,4 +46,5 @@
 - [2026-08-11 - Laboratório 03 - Ex. 03](laboratorios/2026-09-01-lab03-ex03)
 - [2026-08-11 - Laboratório 03 - Ex. 04](laboratorios/2026-09-01-lab03-ex04)
 - [2026-08-11 - Laboratório 03 - Ex. 05](laboratorios/2026-09-01-lab03-ex05)
-- [2026-08-11 - Laboratório 04 - Cadastro de Livros](laboratorios/2026-09-16-lab04)
+- [2026-08-11 - Laboratório 04 - Cadastro de Livros](laboratorios/2026-09-16-lab04-01)
+- [2026-08-11 - Laboratório 04 - Código de barras](laboratorios/2026-09-22-lab04-02)
