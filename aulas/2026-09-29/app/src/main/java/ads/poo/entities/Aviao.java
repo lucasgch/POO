@@ -57,11 +57,11 @@ public class Aviao {
     }
 
     public void ligarMotor(int indexMotor){
-        
+        motores[indexMotor].ligarMotor(indexMotor);
     }
 
     public void desligarMotor(int indexMotor){
-        
+        motores[indexMotor].~desligarMotor(indexMotor);
     }
 
     

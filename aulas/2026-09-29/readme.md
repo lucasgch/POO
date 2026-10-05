@@ -31,10 +31,11 @@ classDiagram
     class Aviao{
         - int maxTripulantes
         - int maxPassageiros
+        - int numeroMotores;
         - double maxCombustivel
         - boolean status
         - ArrayList~Motor~ motores
-        + Aviao(int t, int p, int c)
+        + Aviao(int t, int p, int c, int n)
         + ligarDesligar() boolean
         + ligarMotor(int motor): void
         + desligarMotor(int motor): void
