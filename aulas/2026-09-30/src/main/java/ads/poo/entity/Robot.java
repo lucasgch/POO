@@ -3,24 +3,24 @@ package ads.poo.entity;
 public class Robot {
 
     private String name;
+    private Battery battery;
+    private Position position;
     private double weight;
-    private double x;
-    private double y;
     private double speed;
     private boolean status;
 
     // Construtor principal
-    public Robot(String name, double weight, double x, double y) {
+    public Robot(String name, double weight, Position position) {
         this.name = name;
         this.weight = weight;
-        this.x = x;
-        this.y = y;
+        this.speed = 0.0;
+        this.position = position;
         this.status = false;
     }
 
     // Construtor alternativo (começa na origem 0,0)
     public Robot(String name, double weight) {
-        this(name, weight, 0.0, 0.0);
+        this(name, weight, new Position(0,0));
     }
 
     // Calcula o consumo com o deslocamento e velocidade informada
@@ -78,20 +78,20 @@ public class Robot {
         this.weight = weight;
     }
 
-    public double getX() {
-        return x;
+    public Battery getBattery() {
+        return battery;
     }
 
-    public void setX(double x) {
-        this.x = x;
+    public void setBattery(Battery battery) {
+        this.battery = battery;
     }
 
-    public double getY() {
-        return y;
+    public Position getPosition() {
+        return position;
     }
 
-    public void setY(double y) {
-        this.y = y;
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
     public boolean isStatus() {
