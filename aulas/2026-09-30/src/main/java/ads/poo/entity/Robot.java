@@ -7,20 +7,22 @@ public class Robot {
     private Position position;
     private double weight;
     private double speed;
+    private double accel;
     private boolean status;
 
     // Construtor principal
-    public Robot(String name, double weight, Position position) {
+    public Robot(String name, double weight, Position position, double accel) {
         this.name = name;
         this.weight = weight;
         this.speed = 0.0;
+        this.accel = accel;
         this.position = position;
         this.status = false;
     }
 
-    // Construtor alternativo (começa na origem 0,0)
+    // Construtor alternativo (começa na origem 0,0, com aceleração padrão 1)
     public Robot(String name, double weight) {
-        this(name, weight, new Position(0,0));
+        this(name, weight, new Position(0,0),1);
     }
 
     // Calcula o consumo com o deslocamento e velocidade informada
@@ -106,9 +108,24 @@ public class Robot {
         return speed;
     }
 
-    public void setSpeed(double speed) {
-        this.speed = speed;
+    public double getAccel() {
+        return accel;
     }
 
-    // TODO: Método caminhar
+    public void setAccel(double accel) {
+        this.accel = accel;
+    }
+
+    // Equação de Torricelli
+    public void accelerateOverDistance(double displacement) {
+        if (this.status && displacement > 0) {
+            this.speed = Math.sqrt(Math.pow(this.speed, 2) + (2 * this.accel * displacement));
+        }
+    }
+
+    // Supondo que o robô possui o freio perfeito e para imediatamente
+    public void brake() {
+        this.speed = 0;
+    }
+
 }

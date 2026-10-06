@@ -24,4 +24,13 @@ public class Position {
     public void setY(double y) {
         this.y = y;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Position{");
+        sb.append("[").append(x);
+        sb.append(", ").append(y);
+        sb.append(']');
+        return sb.toString();
+    }
 }

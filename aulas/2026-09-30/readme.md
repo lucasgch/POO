@@ -19,31 +19,31 @@ classDiagram
         + Robot(String name, double weight)
         + calculateConsumption(double displacement, double speed) double
         + calculateConsumption(double displacement) double
-        + getName() String
-        + setName(String name) void
-        + getWeight() double
-        + setWeight(double weight) void
-        + getX() double
-        + setX(double x) void
-        + getY() double
-        + setY(double y) void
         + isStatus() boolean
         + setStatus(boolean status) void
         + getSpeed() double
-        + setSpeed(double speed) void
+        + acelerateOverDistance() void
+        + brake() void
     }
     
     class Battery{
         - double capacity;
         - double currentCharge;
         - double voltage;
+        + Battery (double capacity, double voltage)
+        + chargeBattery()
+        + consuumeBattery()
     }
     
     class Position{
-        double x;
-        double y;
+        - double x;
+        - double y;
+        + Positition(double x, double y)
+        + getY()
+        + setY(double y)
+        + getX()
+        + setX(double x)        
     }
-    
     Robot o--> Battery
     Robot o--> Position
 ```
