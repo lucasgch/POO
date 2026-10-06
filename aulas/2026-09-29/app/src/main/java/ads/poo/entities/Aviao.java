@@ -13,7 +13,17 @@ public class Aviao {
         this.maxTripulantes = maxTripulantes;
         this.maxPassageiros = maxPassageiros;
         this.maxCombustivel = maxCombustivel;
+        this.status = false;
+
+        // Valida se a quantidade de motores é válida
+        if (numeroDeMotores < 0 || numeroDeMotores > 8) {
+            throw new IllegalArgumentException("A quantidade de motores deve ser entre 0 e 8.");
+        }
+
         this.motores = new Motor[numeroDeMotores];
+        for (int i = 0; i < numeroDeMotores; i++) {
+            this.motores[i] = new Motor(); // Ajuste o construtor do Motor se necessário
+        }
     }
 
     public int getMaxTripulantes() {
@@ -52,17 +62,31 @@ public class Aviao {
         this.status = status;
     }
 
-    public void setMotores(int numeroDeMotores){
-        
+    public void setMotores(int numeroDeMotores) {
+        if (numeroDeMotores < 0 || numeroDeMotores > 8) {
+            throw new IllegalArgumentException("A quantidade de motores deve ser entre 0 e 8.");
+        }
+
+        this.motores = new Motor[numeroDeMotores];
+        for (int i = 0; i < numeroDeMotores; i++) {
+            this.motores[i] = new Motor();
+        }
     }
 
-    public void ligarMotor(int indexMotor){
-        motores[indexMotor].ligarMotor(indexMotor);
+    public void ligarMotor(int indexMotor) {
+        if (indexMotor >= 0 && indexMotor < motores.length) {
+            motores[indexMotor].ligarMotor();
+        } else {
+            throw new IndexOutOfBoundsException("Índice de motor inválido: " + indexMotor);
+        }
     }
 
-    public void desligarMotor(int indexMotor){
-        motores[indexMotor].~desligarMotor(indexMotor);
+    public void desligarMotor(int indexMotor) {
+        if (indexMotor >= 0 && indexMotor < motores.length) {
+            motores[indexMotor].desligarMotor();
+        } else {
+            throw new IndexOutOfBoundsException("Índice de motor inválido: " + indexMotor);
+        }
     }
-
     
 }

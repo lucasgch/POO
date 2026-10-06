@@ -3,8 +3,11 @@
  */
 package ads.poo;
 
+import ads.poo.entities.Aviao;
+
 public class App {
     static void main(String[] args) {
-        Aviao aviao = new Aviao(10, 10, )
+        Aviao aviao = new Aviao(10, 10, 10, 8);
+        aviao.ligarMotor(1);
     }
 }

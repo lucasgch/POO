@@ -1,8 +1,12 @@
 package ads.poo.entities;
 
 public class Motor {
-    String tipo;
-    boolean ligado;
+    private String tipo;
+    private boolean ligado;
+
+    public Motor(){
+        this.ligado = false;
+    }
 
     public Motor(String tipo){
         this.tipo = tipo;
@@ -21,5 +25,12 @@ public class Motor {
         this.ligado = ligado;
     }
 
-    
+
+    public void ligarMotor() {
+        this.ligado = true;
+    }
+
+    public void desligarMotor() {
+        this.ligado = false;
+    }
 }

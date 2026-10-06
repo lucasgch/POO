@@ -35,10 +35,10 @@ classDiagram
         - double maxCombustivel
         - boolean status
         - ArrayList~Motor~ motores
-        + Aviao(int t, int p, int c, int n)
+        + Aviao(int t, int p, double c, int n)
         + ligarDesligar() boolean
-        + ligarMotor(int motor): void
-        + desligarMotor(int motor): void
+        + ligarMotor(int motor) void
+        + desligarMotor(int motor) void
     }
 
     class Motor{
