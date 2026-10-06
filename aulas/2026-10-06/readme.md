@@ -31,8 +31,8 @@ classDiagram
         - Date year
         - int pages
     }
-    Book "1" o-- "N" Author
-    Book "N" *-- "N" Edition
+    Book "1" o-- "1-N" Author
+    Book "1-N" *-- "1-N" Edition
     Edition "1" o-- "1" Publisher
 ```
 
@@ -42,30 +42,31 @@ classDiagram
 classDiagram
     direction LR
     
-    class Aluno{
+    class Aluno {
         - BigInt id
         - String nome
         - String cpf
         - LocalDate dataNasc
         - ArrayList~Curso~ curso
+        - Matricula matricula
     }
-    class Curso{
+    class Curso {
         - BigInt id
         - String nome
     }
-    class Matricula{
+    class Matricula {
         - BigInt id
         - Curso curso
         - Aluno aluno
         - LocalDate dataMatricula
         - SituacaoMatricula situacaoMatricula
     }
-    class SituacaoMatricula{
+    class SituacaoMatricula {
         BigInt id
         String Situacao
     }
-    Aluno "N" o-- "1-N" Curso
-    Aluno "N" *-- "1-N" Matricula
+    Aluno "0-N" o-- "1-N" Curso
+    Aluno "1-N" *-- "1-N" Matricula
     Matricula "1" *-- "1" SituacaoMatricula
     
 ```
