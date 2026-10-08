@@ -5,6 +5,7 @@ import java.text.ParseException;
 
 public class Telefone {
 
+    private Long id;
     private String numero;
     private RotuloTelefone rotulo;
     private String mask = null;

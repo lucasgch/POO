@@ -61,4 +61,11 @@ public class Contato {
         Telefone novoTelefone = new Telefone(novoRotulo, numero);
         return true;
     }
+
+    public boolean removeTelefone(String rotulo, String numero) throws ParseException {
+        if ( isNullOrEmpty(rotulo) || isNullOrEmpty(numero) ) {
+            return false;
+        }
+        return true;
+    }
 }
