@@ -4,6 +4,11 @@
 classDiagram
     directionLR
     
+    class App{
+        - agenda Agenda
+        +main()
+        +menu()
+    }
     class Agenda{
         - ArrayList~Contato~
         + Agenda()
@@ -14,6 +19,8 @@ classDiagram
         + addEmail()
         + updateTelefone()
         + updateEmail()
+        + removeTelefone()
+        + removeEmail()
         + toString(): String
     }
     class Contato {
@@ -24,16 +31,26 @@ classDiagram
         - HashMap~String~ Telefone 
         - HashMap~String~ email
         + Contato(String nome, String sobrenome, LocalDate dtNascimento)
+        + addTelefone()
+        + addEmail()
+        + updateTelefone()
+        + updateEmail()
+        + removeTelefone()
+        + removeEmail()
+        + toString()
     }
     class Email{
-        + Email(String chave, String email)
         - BigInt id
-        - String email    
+        - String email
+        + Email(String chave, String email)
+        + toString()
     }
     class Telefone{
-        + Telefone(String chave, String telefone)
         - BigInt id
-        - String numero    
+        - String numero
+        + Telefone(String chave, String telefone)
+        + calculaMascara()
+        + toString()
     }
     Agenda "1" -- "0-N" Contato
     Contato "1" -- "N" Email
