@@ -2,37 +2,35 @@ package ads.poo.entity;
 
 public class Email {
 
-    private final String eR = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
+    private static final String eR = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
 
     private String email;
-    private final RotuloEmail rotulo;
+    private String rotulo;
 
     public Email(String rotulo, String email) {
-        if (rotulo == null ) {
-            this.rotulo = new RotuloEmail("");
-        } else {
-            this.rotulo = new RotuloEmail(rotulo);
-        }
-        if (email == null || !email.matches(eR) ) {
-            email = "";
-        }
-        this.email = email.toLowerCase();
-    }
-
-    public Email(RotuloEmail rotulo, String email){
         this.rotulo = rotulo;
-        if (email == null || !email.matches(eR) ) {
-            email = "";
-        }
-        this.email = email.toLowerCase();
+        this.email = "";
+        setEmail(email);
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public boolean setEmail(String email) {
+        if (email != null && email.matches(eR)) {
+            this.email = email.toLowerCase();
+            return true;
+        }
+        return false;
+    }
+
+    public String getRotulo() {
+        return rotulo;
+    }
+
+    public void setRotulo(String rotulo) {
+        this.rotulo = rotulo;
     }
 
     // Todo - formatar email

@@ -1,8 +1,6 @@
 package ads.poo;
 
 import ads.poo.entity.Email;
-import ads.poo.entity.RotuloEmail;
-import ads.poo.entity.RotuloTelefone;
 import ads.poo.entity.Telefone;
 
 import java.text.ParseException;
@@ -10,11 +8,30 @@ import java.text.ParseException;
 public class App {
 
     static void main(String[] args) throws ParseException {
-        RotuloTelefone casa = new RotuloTelefone("Residencial");
-        Telefone tel01 = new Telefone(casa, "554398143018");
+        menu();
+        String rotuloTelefone = "Residencial";
+        Telefone tel01 = new Telefone(rotuloTelefone, "554398143018");
         System.out.println(tel01);
-        RotuloEmail trabalho = new RotuloEmail("Coorporativo");
-        Email email01 = new Email(trabalho, "lucasgodoyjor@gmail.com");
+        String rotuloTrabalho = "Coorporativo";
+        Email email01 = new Email(rotuloTrabalho, "lucasgodoyjor@gmail.com");
         System.out.println(email01);
+    }
+
+    public static void menu(){
+        System.out.println("""
+                Agenda de Contatos
+                        1 - Adicionar Contato
+                        2 - Remover Contato
+                        3 - Atualizar Dados do Contato (Nome/Data)
+                        4 - Buscar Contato
+                        5 - Listar Todos os Contatos
+                        6 - Adicionar Telefone a um Contato
+                        7 - Remover Telefone de um Contato
+                        8 - Adicionar E-mail a um Contato
+                        9 - Remover E-mail de um Contato
+                        0 - Sair
+                """);
+
+        // TODO: Implementar a lógica do menu
     }
 }

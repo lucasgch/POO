@@ -7,10 +7,10 @@ public class Telefone {
 
     private Long id;
     private String numero;
-    private RotuloTelefone rotulo;
+    private String rotulo;
     private String mask = null;
 
-    public Telefone(RotuloTelefone rotulo, String numero) throws ParseException {
+    public Telefone(String rotulo, String numero) {
         this.rotulo = rotulo;
         this.numero = numero;
     }
@@ -23,11 +23,11 @@ public class Telefone {
         this.numero = numero;
     }
 
-    public RotuloTelefone getRotulo() {
+    public String getRotulo() {
         return rotulo;
     }
 
-    public void setRotulo(RotuloTelefone rotulo) {
+    public void setRotulo(String rotulo) {
         this.rotulo = rotulo;
     }
 
