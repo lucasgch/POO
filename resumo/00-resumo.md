@@ -3,4 +3,5 @@
 1. [Objetos](01-objetos.md)
 2. [Java API Collections](./02-JavaAPICollections.md)
 3. [Streams](./03-Streams.md)
-4. 
+4. [Laboratório Coleções](./04-laboratorio-colecoes.md)
+5. 
