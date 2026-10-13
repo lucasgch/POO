@@ -1,12 +1,10 @@
-# Resumo: Programação Orientada à objetos
-
-## Objetos
+# Objetos
 
 Item identificável, com:
     -  **Características:** - Estado - Representa as características do objeto
     -  **Comportamentos** - Representa as ações que este objeto é capaz de executar
 
-### Como identificar objetos?
+## Como identificar objetos?
 
 - Quais são suas características (**atributos**)?
 - O que permitem fazer (**métodos**)?
