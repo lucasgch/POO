@@ -113,17 +113,22 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
             - capitulos: int
         }
         
+        class Periodico {
+            - issn: String
+        }
+        
         class Revista {
-            - String: Categoria
+            - segmento: String
         }
         
         class Jornal {
             - cadernos: int
             - jornalistaResponsavel: String
+            - editor: String
         }
         
         class Gibi {
-            - quadrinhos: int
+            - ilustrador: String
         }
         
         class ItemPedido {
@@ -137,9 +142,11 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
         }
 
         Produto <|-- Livro
-        Produto <|-- Revista
-        Produto <|-- Jornal
-        Produto <|-- Gibi
+        Produto <|-- Periodico
+
+        Periodico <|-- Gibi
+        Periodico <|-- Jornal
+        Periodico <|-- Revista
             
         Pedido "1" *-- "1..N" ItemPedido
         ItemPedido "1" o-- "1" Produto
@@ -151,45 +158,46 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
     classDiagram
         direction LR
         
-        class MeioDeTransporte{
+        class Veiculo {
             - id: long
             - anoDeFabricacao: int
+            - velocidadeMaxima: double
+            - balas: int
+            + acelerar() boolean
+            + frear() boolean
+            + atirar() boolean
         }      
         
         class Carro {
             - id: long
             - marca: String
             - modelo: String
-            - cor: String 
-            - passageiros: int
+            - cor: String
+            + correr()
         }
         
         class Aviao{
            - id: long
            - modelo: String
            - tripulantes: int
-           - motores: ArrayList~Motor~
+           - bombas: int
            + voar()
+           + jogarBomba()
         }
         
         class Caminhao {
             - id: long
             - modelo: String
+            - carga: double
+            + andar()
             + carregar()
             + descarregar()
+            
         }
-        
-        class Motor {
-            id: long
-            tipo: String
-            potencia: double
-        }
-        
-        MeioDeTransporte <|-- Carro
-        MeioDeTransporte <|-- Aviao
-        MeioDeTransporte <|-- Caminhao
-        
-        Aviao "1" o-- "1-8" Motor
+
+        Veiculo <|-- Carro
+        Veiculo <|-- Aviao
+        Veiculo <|-- Caminhao
 ```
 
 ## Gato, cachorro, arara, galinha, baleia, tubarão
