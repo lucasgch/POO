@@ -136,7 +136,6 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
 
 ## Gato, cachorro, arara, galinha, baleia, tubarão
 
-
 ```mermaid
     classDiagram
         directionLR
@@ -145,23 +144,29 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
             - nome: String
             - cor: String
             - sexo: String
+            + comer(): void
         }
         
         class Cachorro {
             - id: long
             - raca: String
+            + latir():
         }
         class Gato {
             - id: long
+            + miar()
         }
         class Arara {
             - id: long
+            + voar() void
         }
         class Galinha {
             - id: long
+            + ciscar() void
         }
         class Baleia {
-            - id: long 
+            - id: long
+            + nadar() void
         }
         
         Animal <|-- Cachorro
