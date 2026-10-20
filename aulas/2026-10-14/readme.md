@@ -11,15 +11,18 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
 
 ```mermaid
     classDiagram
-        directionLR
+        direction LR
         class Escola {
-            id: long
-            nome: String
-            endereco: String
-            telefone: String
-            cursos: ArrayList<Curso>
-            coordenador: Coordenador
-            diretor: Diretor
+            - id: long
+            - nome: String
+            - endereco: String
+            - telefone: String
+            - cursos: ArrayList<Curso>
+            - coordenador: Coordenador
+            - diretor: Diretor
+            + Escola()
+            + adicionarCurso()
+            + removerCurso()
         }
         
         class Curso {
@@ -27,6 +30,9 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
             - nome: String
             - turmas: ArrayList<Turma>
             - coordenador: Coordenador
+            + Curso()
+            + adicionarTurma()
+            + removerTurma()
         }
         
         class Disciplina {
@@ -43,29 +49,43 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
         }
         
         class Aluno {
-            - id: long
-            - nome: String
+            - idPessoa: long
             - codMatricula: long
         }
         
         class Professor {
-            - id: long
-            - nome: String
+            - salario: bigDecimal
         }
         
         class Coordenador {
-            - salario: bigDecimal
+            - ano: int
         }
+        
+        class Coordenadorias {
+            
+        }
+        
         class Diretor {
-            - salario: bigDecimal
+            - gratificacao: bigDecimal
         }
+        
+        class Pessoa {
+            - id: long
+            - nome: String
+        }
+
+        Pessoa <|-- Professor
+        Pessoa <|-- Aluno
+        
+        Coordenadorias "1" -- "1" Curso
         
         Professor <|-- Coordenador
         Professor <|-- Diretor
         
         Escola "1" *-- "1..N" Curso
-        Escola "1" *-- "1" Coordenador
+        Escola "1" o-- "1" Diretor
         Curso "1" *-- "1..N" Turma
+        Curso "1" o-- "1" Coordenador
         
         Turma "1" o-- "1..N" Disciplina
         Disciplina "1" o-- "1..N" Aluno
@@ -76,36 +96,60 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
 
 ```mermaid
     classDiagram
-        directionLR
+        direction LR
+        
+        class Produto {
+            - id: long
+            - ano: int
+            - título: String
+            - preco: double
+        }
         
         class Livro {
-            - id: long
-            - título: String
+            - isbn: String
             - autor: String
             - editora: String
-            - ano: int
             - paginas: int
+            - capitulos: int
         }
         
         class Revista {
-            - id: long 
+            - String: Categoria
         }
         
         class Jornal {
-            - id: long
+            - cadernos: int
+            - jornalistaResponsavel: String
         }
         
         class Gibi {
-            - id: long
+            - quadrinhos: int
         }
+        
+        class ItemPedido {
+            - dataPedido: LocalDate
+            - produto: Produto
+            - valor: double
+        }
+        
+        class Pedido {
+            produtos: ArrayList~ItemPedido~
+        }
+
+        Produto <|-- Livro
+        Produto <|-- Revista
+        Produto <|-- Jornal
+        Produto <|-- Gibi
             
+        Pedido "1" *-- "1..N" ItemPedido
+        ItemPedido "1" o-- "1" Produto
 ```
 
 ## Carro, avião, barco, caminhão
 
 ```mermaid
     classDiagram
-        directionLR
+        direction LR
         
         class MeioDeTransporte{
             - id: long
@@ -117,28 +161,42 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
             - marca: String
             - modelo: String
             - cor: String 
+            - passageiros: int
         }
         
         class Aviao{
-          - id: long
+           - id: long
            - modelo: String
+           - tripulantes: int
+           - motores: ArrayList~Motor~
+           + voar()
         }
         
         class Caminhao {
             - id: long
             - modelo: String
+            + carregar()
+            + descarregar()
+        }
+        
+        class Motor {
+            id: long
+            tipo: String
+            potencia: double
         }
         
         MeioDeTransporte <|-- Carro
         MeioDeTransporte <|-- Aviao
         MeioDeTransporte <|-- Caminhao
+        
+        Aviao "1" o-- "1-8" Motor
 ```
 
 ## Gato, cachorro, arara, galinha, baleia, tubarão
 
 ```mermaid
     classDiagram
-        directionLR
+        direction LR
         class Animal {
             - id: long
             - nome: String
