@@ -160,6 +160,9 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
         
         class Veiculo {
             - id: long
+            - modelo: String
+            - marca: String
+            - cor: String
             - anoDeFabricacao: int
             - velocidadeMaxima: double
             - balas: int
@@ -169,16 +172,10 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
         }      
         
         class Carro {
-            - id: long
-            - marca: String
-            - modelo: String
-            - cor: String
-            + correr()
+            - passageiros: int
         }
         
         class Aviao{
-           - id: long
-           - modelo: String
            - tripulantes: int
            - bombas: int
            + voar()
@@ -186,10 +183,7 @@ Para cada um dos exercícios abaixo, crie um diagrama UML com associações de h
         }
         
         class Caminhao {
-            - id: long
-            - modelo: String
             - carga: double
-            + andar()
             + carregar()
             + descarregar()
             
