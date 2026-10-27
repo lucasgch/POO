@@ -15,11 +15,11 @@ public class Personagem {
     }
 
     public String mover(){
-        return "Personagem se moveu";
+        return "Personagem se moveu com velocidade: " +this.getVelocidade();
     }
 
     public String atacar(){
-        return "Personagem acacou";
+        return "Personagem acacou com força "+this.ataque;
     }
 
     public int getVida() {

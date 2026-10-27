@@ -8,11 +8,11 @@ public class Cavaleiro extends Personagem{
 
     @Override
     public String mover() {
-        return "Cavaleiro se moveu";
+        return "Cavaleiro se moveu com velocidade: " +this.getVelocidade();
     }
 
     @Override
     public String atacar() {
-        return "Cavaleiro atacou";
+        return "Cavaleiro atacou com força: "+this.getAtaque();
     }
 }
