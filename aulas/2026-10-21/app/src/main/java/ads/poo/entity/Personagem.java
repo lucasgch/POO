@@ -1,6 +1,6 @@
 package ads.poo.entity;
 
-public class Personagem {
+public abstract class Personagem {
 
     private int vida;
     private int ataque;
@@ -14,13 +14,9 @@ public class Personagem {
         this.velocidade = vel;
     }
 
-    public String mover(){
-        return "Personagem se moveu com velocidade: " +this.getVelocidade();
-    }
+    public abstract String mover();
 
-    public String atacar(){
-        return "Personagem acacou com força "+this.ataque;
-    }
+    public abstract String atacar();
 
     public int getVida() {
         return vida;

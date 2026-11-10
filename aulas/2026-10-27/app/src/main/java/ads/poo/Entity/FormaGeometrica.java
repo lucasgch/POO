@@ -1,6 +1,6 @@
 package ads.poo.Entity;
 
-public class FormaGeometrica {
+public abstract class FormaGeometrica {
     private String corDaLinha;
     private Coordenada coodenadaInicial;
 
@@ -25,9 +25,7 @@ public class FormaGeometrica {
         this.coodenadaInicial = coodenadaInicial;
     }
 
-    public String desenhar(){
-        return this.toString();
-    }
+    public abstract String desenhar();
 
     @Override
     public String toString() {

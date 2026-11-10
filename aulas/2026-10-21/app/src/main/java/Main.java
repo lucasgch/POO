@@ -10,7 +10,6 @@ public class Main {
         Aldeao aldeao = new Aldeao();
         Arqueiro arqueiro = new Arqueiro();
         Cavaleiro cavaleiro = new Cavaleiro();
-        Personagem personagem = new Personagem();
 
         System.out.println(aldeao.mover());
         System.out.println(aldeao.atacar());
@@ -20,10 +19,6 @@ public class Main {
 
         System.out.println(cavaleiro.mover());
         System.out.println(cavaleiro.atacar());
-
-        System.out.println(personagem.mover());
-        System.out.println(personagem.atacar());
-
 
     }
 }
