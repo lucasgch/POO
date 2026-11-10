@@ -1,6 +1,6 @@
 package ads.poo.entity;
 
-public class Cavaleiro extends Personagem{
+public class Cavaleiro extends Personagem implements Guerreiro {
 
     public Cavaleiro() {
         super(50,3,2.0);
