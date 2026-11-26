@@ -6,13 +6,13 @@ public class Livro {
 
     static int contadorDeId = 0;
 
-    private int id;
+    private final int id;
     private String isbn;
     private String titulo;
     private String autor;
 
     public Livro(String isbn, String titulo, String autor) {
-        this.id = contadorDeId+1;
+        this.id = contadorDeId++;
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;

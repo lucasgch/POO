@@ -8,13 +8,15 @@ public class App {
 
         System.out.println("ok");
 
-        Biblioteca biblioteca = new Biblioteca();
-        //Conta conta = new Conta(1, 1);
-        //try {
-        //    conta.saque(200);
-        //} catch (SaldoInsuficienteException e){
-        //    System.out.println("Erro " +e.getMessage());
-        //}
+        Biblioteca biblioteca = new Biblioteca("Biblioteca do IFSC");
+        Livro livro01 = new Livro("978-65-89999-01-3", "Livro titulo", "Joao autor");
+        Livro livro02 = new Livro("978-65-89999-01-4", "Livro titulo 2", "Joao autor 02");
+        User usuario01 = new User("Joao");
+        biblioteca.cadastrarUsuario(usuario01);
+        biblioteca.cadastrarLivro(livro01);
+        System.out.println(biblioteca.removerLivro(livro02));
+        System.out.println(livro01.getId());
+        System.out.println(livro02.getId());
 
     }
 
